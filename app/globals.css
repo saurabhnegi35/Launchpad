@@ -154,5 +154,17 @@
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
   }
-  
+
+  /*Styles for Search Form */
+  .search-form {
+    @apply max-w-3xl w-full min-h-[80px] bg-white border-[5px] border-black rounded-[80px] text-[24px] mt-8 px-5 flex flex-row items-center gap-5;
+  }
+
+  .search-input {
+    @apply flex-1 font-bold placeholder:font-semibold placeholder:text-gray-400 w-full h-auto outline-none;
+  }
+
+  .search-btn {
+    @apply size-[50px] text-white rounded-full  bg-black flex justify-center items-center ;
+  }
 }
