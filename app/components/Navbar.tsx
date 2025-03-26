@@ -8,7 +8,11 @@ const Navbar = async () => {
     <header className="bg-white shadow-sm px-6 py-4 font-work-sans">
       <nav className="flex justify-between items-center">
         {/* Logo */}
-        <Link href="/" className="text-xl font-bold text-gray-800">
+        <Link
+          href="/"
+          style={{ fontFamily: "var(--font-work-sans)", fontWeight: 500 }}
+          className="text-xl font-bold text-gray-800"
+        >
           LaunchPad 🚀
         </Link>
 
@@ -16,7 +20,11 @@ const Navbar = async () => {
         <div className="flex items-center gap-5 text-black">
           {session && session?.user ? (
             <>
-              <Link href="/startup/create" className="">
+              <Link
+                tyle={{ fontFamily: "var(--font-work-sans)", fontWeight: 400 }}
+                href="/startup/create"
+                className=""
+              >
                 <span>Create</span>
               </Link>
               <form
@@ -26,11 +34,21 @@ const Navbar = async () => {
                 }}
               >
                 <button type="submit">
-                  <span>Logout</span>
+                  <span
+                    style={{
+                      fontFamily: "var(--font-work-sans)",
+                      fontWeight: 400,
+                    }}
+                  >
+                    Logout
+                  </span>
                 </button>
               </form>
 
-              <Link href={`/user/${session?.id}`}>
+              <Link
+                style={{ fontFamily: "var(--font-work-sans)", fontWeight: 400 }}
+                href={`/user/${session?.id}`}
+              >
                 <span>{session?.user?.name}</span>
               </Link>
             </>
@@ -41,7 +59,10 @@ const Navbar = async () => {
                 await signIn("github");
               }}
             >
-              <button type="submit">
+              <button
+                style={{ fontFamily: "var(--font-work-sans)", fontWeight: 400 }}
+                type="submit"
+              >
                 <span>Login</span>
               </button>
             </form>
