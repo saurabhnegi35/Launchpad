@@ -1,9 +1,8 @@
 // import
-
-import { client } from "@/sanity/lib/client";
 import SearchForm from "../../components/SearchForm";
-import StartupCard from "../../components/StartupCard";
+import StartupCard, { StartupTypeCard } from "../../components/StartupCard";
 import { STARTUPS_QUERY } from "@/sanity/lib/query";
+import { sanityFetch, SanityLive } from "@/sanity/lib/live";
 
 export default async function Home({
   searchParams,
@@ -11,6 +10,8 @@ export default async function Home({
   searchParams: Promise<{ query?: string }>;
 }) {
   const query = (await searchParams).query;
+
+  const params = { search: query || null };
 
   // const posts = [
   //   {
@@ -136,11 +137,11 @@ export default async function Home({
   //     title: "From ELIZA to GPT",
   //   },
   // ];
-  const posts = await client.fetch(STARTUPS_QUERY);
-
+  // const posts = await client.fetch(STARTUPS_QUERY);
+  const { data: posts } = await sanityFetch({ query: STARTUPS_QUERY, params });
   return (
     <>
-      <section className="pattern pink_container">
+      <section className="pattern blue_container">
         <h1 className="heading font-work-sans">
           Pitch Your Startup, <br /> Connect with Entrepreneurs
         </h1>
@@ -165,6 +166,8 @@ export default async function Home({
           )}
         </ul>
       </section>
+
+      <SanityLive />
     </>
   );
 }

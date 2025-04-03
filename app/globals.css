@@ -123,7 +123,8 @@
   }
 }
 .pattern {
-  background-image: radial-gradient(
+  background-image:
+    radial-gradient(
       circle closest-side,
       rgba(30, 144, 255, 0.4) 40%,
       transparent 41%
@@ -180,7 +181,7 @@
     @apply uppercase bg-black px-6 py-6 font-extrabold text-white sm:text-[54px] sm:leading-[64px] text-[36px] leading-[46px] max-w-5xl text-center my-5;
   }
 
-  .pink_container {
+  .blue_container {
     @apply w-full bg-primary min-h-[530px] flex justify-center items-center flex-col py-10 px-6;
   }
 
@@ -193,6 +194,14 @@
     background-color: rgba(0, 0, 0, 0.8); /* dark overlay */
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
+  }
+
+  .tag {
+    @apply bg-secondary px-6 py-3 font-bold rounded-sm uppercase relative;
+  }
+
+  .tag-tri {
+    @apply before:content-[''] before:absolute before:top-2 before:left-2 before:border-t-[10px] before:border-t-black before:border-r-[10px] before:border-r-transparent after:content-[''] after:absolute after:bottom-2 after:right-2 after:border-b-[10px] after:border-b-black after:border-l-[10px] after:border-l-transparent;
   }
 
   /*Styles for Search Card Grid */
@@ -249,5 +258,13 @@
 
   .startup-card_skeleton {
     @apply w-full h-96 rounded-[22px] bg-zinc-400;
+  }
+
+  .category-tag {
+    @apply font-medium text-[16px] !bg-[#c0fbff] px-4 py-2 rounded-full;
+  }
+
+  .no-result {
+    @apply text-black-100 text-sm font-normal;
   }
 }

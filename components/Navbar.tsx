@@ -21,7 +21,7 @@ const Navbar = async () => {
           {session && session?.user ? (
             <>
               <Link
-                tyle={{ fontFamily: "var(--font-work-sans)", fontWeight: 400 }}
+                style={{ fontFamily: "var(--font-work-sans)", fontWeight: 400 }}
                 href="/startup/create"
                 className=""
               >
