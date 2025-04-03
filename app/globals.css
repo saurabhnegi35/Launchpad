@@ -265,6 +265,19 @@
   }
 
   .no-result {
-    @apply text-black-100 text-sm font-normal;
+    @apply text-gray-700 text-sm font-normal;
+  }
+
+  /* view */
+  .view_skeleton {
+    @apply bg-zinc-400 h-10 w-24 rounded-lg fixed bottom-3 right-3;
+  }
+
+  .view-container {
+    @apply flex justify-end items-center mt-5 fixed bottom-3 right-3;
+  }
+
+  .view-text {
+    @apply font-medium text-[16px] bg-[#c0fbff] px-4 py-2 rounded-lg capitalize;
   }
 }
