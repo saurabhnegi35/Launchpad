@@ -11,6 +11,7 @@ import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 
 import { formSchema } from "@/lib/validation";
+import { createPitch } from "@/lib/actions";
 
 const StartupForm = () => {
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -29,54 +30,23 @@ const StartupForm = () => {
 
       await formSchema.parseAsync(formValues);
 
-      console.log("result>>", formValues);
-      //   const result = await createIdea(prevState, formData, pitch)
+      const result = await createPitch(prevState, formData, pitch);
 
-      // if (result.status == "SUCCESS") {
-      //   toast.success("An unexpected error has occured", {
-      //     unstyled: true,
-      //     classNames: {
-      //       toast: "bg-blue-400",
-      //       title: "text-red-400",
-      //       description: "text-red-400",
-      //       actionButton: "bg-zinc-400",
-      //       cancelButton: "bg-orange-400",
-      //       closeButton: "bg-lime-400",
-      //     },
-      //   });
-      //   router.push(`/startup/${result.id}`);
-      // }
-      // return result;
+      if (result.status == "SUCCESS") {
+        toast.success("Your Startup pitch has been created successfully");
+        router.push(`/startup/${result._id}`);
+      }
+      return result;
     } catch (error) {
       if (error instanceof z.ZodError) {
         const fieldErrors = error.flatten().fieldErrors;
 
         setErrors(fieldErrors as unknown as Record<string, string>);
-        toast.error("Please check your inputs and try again", {
-          unstyled: true,
-          classNames: {
-            toast: "bg-red",
-            title: "text-red",
-            description: "text-red-400",
-            actionButton: "bg-zinc-400",
-            cancelButton: "bg-orange-400",
-            closeButton: "bg-lime-400",
-          },
-        });
+        toast.error("Please check your inputs and try again");
         return { ...prevState, error: "Validation Failed", status: "ERROR" };
       }
 
-      toast.error("An unexpected error has occured", {
-        unstyled: true,
-        classNames: {
-          toast: "bg-red",
-          title: "text-red",
-          description: "text-red-400",
-          actionButton: "bg-zinc-400",
-          cancelButton: "bg-orange-400",
-          closeButton: "bg-lime-400",
-        },
-      });
+      toast.error("An unexpected error has occured");
 
       return {
         ...prevState,
