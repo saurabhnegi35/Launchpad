@@ -270,11 +270,11 @@
 
   /* view */
   .view_skeleton {
-    @apply bg-[#c0fbff] h-10 w-24 rounded-lg fixed bottom-3 right-3;
+    @apply bg-[#c0fbff] h-10 w-24 rounded-lg fixed bottom-20 right-8;
   }
 
   .view-container {
-    @apply flex justify-end items-center mt-5 fixed bottom-3 right-3;
+    @apply flex justify-end items-center mt-5 fixed bottom-20 right-8;
   }
 
   .view-text {
@@ -309,4 +309,6 @@
   .startup-form_btn {
     @apply bg-[#0a92ec] border-[4px] border-black rounded-full p-5 min-h-[70px] w-full font-bold text-[18px];
   }
+
+  
 }
