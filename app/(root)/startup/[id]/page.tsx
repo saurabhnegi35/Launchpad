@@ -12,7 +12,6 @@ import markdownit from "markdown-it";
 import { Skeleton } from "@/components/ui/skeleton";
 import View from "@/components/View";
 import StartupCard, { StartupTypeCard } from "@/components/StartupCard";
-import { playlist } from "../../../../sanity/schemaTypes/playlist";
 export const experimental_ppr = true;
 
 const md = markdownit();
@@ -26,7 +25,7 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
       slug: "editors-pick",
     }),
   ]);
-  
+
   // Sequential Data Fetching
   // const post = await client.fetch(STARTUPS_BY_ID_QUERY, { id });
 
