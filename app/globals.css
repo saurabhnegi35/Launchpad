@@ -310,5 +310,63 @@
     @apply bg-[#0a92ec] border-[4px] border-black rounded-full p-5 min-h-[70px] w-full font-bold text-[18px];
   }
 
-  
+  /* profile */
+  /* .profile_container {
+    @apply w-full pb-10 pt-20 px-6 max-w-7xl mx-auto lg:flex-row flex-col flex gap-10;
+  }
+
+  .profile_card {
+    @apply w-80 px-6 pb-6 pt-20 flex flex-col justify-center items-center bg-[#0a92ec] border-[5px] border-black shadow rounded-[30px] relative z-0 h-fit max-lg:w-full;
+  }
+
+  .profile_title {
+    @apply w-11/12 bg-white border-[5px] border-black rounded-[20px] px-5 py-3 absolute -top-9 after:absolute after:content-[''] after:-top-1 after:right-0 after:-skew-y-6 after:bg-black after:-z-[1] after:rounded-[20px] after:w-full after:h-[60px] before:absolute before:content-[''] before:-bottom-1 before:left-0  before:-skew-y-6 before:w-full before:h-[60px] before:bg-black  before:-z-[1] before:rounded-[20px] shadow;
+  }
+
+  .profile_image {
+    @apply rounded-full object-cover border-[3px] border-black;
+  } */
+
+  .profile_container {
+    @apply w-full max-w-7xl mx-auto px-6 pt-20 pb-10 flex flex-col lg:flex-row gap-10 items-center justify-center;
+  }
+
+  .profile_card {
+    @apply w-80 max-lg:w-full px-6 pt-16 pb-6 flex flex-col justify-center items-center 
+  bg-[#0a92ec] border-[3px] border-black shadow-lg rounded-2xl relative z-0;
+  }
+  .profile_title {
+    @apply absolute -top-10 px-6 py-3 bg-white border-[3px] border-black 
+  text-black font-semibold text-center rounded-t-xl relative shadow-md;
+  }
+
+  .profile_title {
+    @apply absolute -top-10 px-6 py-3 bg-white border-[4px] border-black 
+  text-black font-bold rounded-xl text-center shadow-lg relative;
+  }
+
+  .profile_title {
+    @apply absolute -top-10 px-6 py-3 bg-white border-[3px] border-black
+           text-black font-semibold text-center shadow-xl rounded-xl 
+           w-fit z-10 transition-all duration-500 ease-out;
+  }
+
+  .animate-slideDown {
+    animation: slideDownFade 0.6s ease-out both;
+  }
+
+  @keyframes slideDownFade {
+    0% {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .profile_image {
+    @apply w-32 h-32 rounded-full object-cover border-[3px] border-black mb-6 shadow;
+  }
 }
